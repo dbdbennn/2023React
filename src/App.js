@@ -1,8 +1,7 @@
-// App.js
-import Counter from "./Counter";
+//App.js
+import EventPractice from "./EventPractice";
 
 const App = () => {
-return <Counter />;
-// 콘솔창에 오류메시지가 나타난다.
+    return <EventPractice />;
 };
 export default App;
