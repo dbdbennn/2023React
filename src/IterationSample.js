@@ -26,7 +26,20 @@ const IterationSample = () => {
         setInputText(""); // inputText를 비운다.
     };
 
-    const nameList = names.map((name)=> <li key={name.id}>{name.text}</li>)
+    const onRemove = (id) => {
+        const nextNames = names.filter((name) => name.id !== id);
+        // 전체 목록중에서 해당되는 데이터를 더블클릭하면 전체 id와
+        // 더블클릭한 id를 비교해서 같은 데이터만 제외하고
+        setNames(nextNames);
+        // nextNames값에 의해서 데이터를 업데이트 한다.
+    };
+    const nameList = names.map((name) => (
+        <li key={name.id} onDoubleClick={() => onRemove(name.id)}>
+        {name.text}
+        </li>
+    ));
+
+    // const nameList = names.map((name)=> <li key={name.id}>{name.text}</li>)
 
     return (
         <>
@@ -35,6 +48,8 @@ const IterationSample = () => {
         <ul>{nameList}</ul>
         </>
     );
+
+    
 };
 
 export default IterationSample;
