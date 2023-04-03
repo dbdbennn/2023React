@@ -9,6 +9,8 @@ class ScrollBox extends Component {
         // const clientHeight = this.box.clientHeight
         //
         this.box.scrollTop = scrollHeight - clientHeight;
+        // scrollHeight는 박스의 전체 높이
+        // clientHeight는 스크롤이 있는 전체 높이
     };
     render() {
             const style = {
